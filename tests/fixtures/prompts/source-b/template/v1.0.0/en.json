@@ -1,0 +1,36 @@
+{
+    "meta": {
+        "version": "1.0.0",
+        "prompt_type": "template",
+        "language": "en",
+        "created_at": "2026-01-01T00:00:00Z",
+        "cost_estimated": 0.001,
+        "model_hints": [],
+        "category": "example",
+        "tags": [
+            "test"
+        ],
+        "output_schema": null
+    },
+    "blocks": [
+        {
+            "role": "system",
+            "content": "You are a template assistant."
+        },
+        {
+            "role": "user",
+            "content": "{{instruction}}{{#suffix}} — suffix: {{suffix}}{{/suffix}}"
+        }
+    ],
+    "variables": {
+        "instruction": {
+            "type": "string",
+            "required": true
+        },
+        "suffix": {
+            "type": "string",
+            "required": false,
+            "default": null
+        }
+    }
+}

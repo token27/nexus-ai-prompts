@@ -1,0 +1,40 @@
+{
+    "meta": {
+        "version": "1.0.0",
+        "prompt_type": "image-weighted",
+        "language": "en",
+        "created_at": "2026-05-20T00:00:00Z",
+        "cost_estimated": null,
+        "model_hints": [
+            "stable-diffusion-xl"
+        ],
+        "category": "example",
+        "tags": [
+            "image",
+            "weighted",
+            "stability-ai"
+        ],
+        "output_schema": null
+    },
+    "blocks": [
+        {
+            "content": "{{subject}}, golden hour, cinematic composition, {{quality}}",
+            "weight": 1.0
+        },
+        {
+            "content": "blurry, low quality, watermark, text, distorted",
+            "weight": -0.8
+        }
+    ],
+    "variables": {
+        "subject": {
+            "type": "string",
+            "required": true
+        },
+        "quality": {
+            "type": "string",
+            "required": false,
+            "default": "8k, ultra detailed, photorealistic"
+        }
+    }
+}

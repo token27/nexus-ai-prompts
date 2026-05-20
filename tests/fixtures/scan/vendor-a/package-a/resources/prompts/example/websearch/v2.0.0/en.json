@@ -1,0 +1,31 @@
+{
+    "meta": {
+        "version": "2.0.0",
+        "prompt_type": "websearch",
+        "language": "en",
+        "created_at": "2026-05-19T00:00:00Z",
+        "cost_estimated": 0.002,
+        "model_hints": [],
+        "category": "scan-test",
+        "tags": [
+            "test"
+        ],
+        "output_schema": null
+    },
+    "blocks": [
+        {
+            "role": "system",
+            "content": "You are a v2 search assistant."
+        },
+        {
+            "role": "user",
+            "content": "Search v2 for: {{topic}}"
+        }
+    ],
+    "variables": {
+        "topic": {
+            "type": "string",
+            "required": true
+        }
+    }
+}

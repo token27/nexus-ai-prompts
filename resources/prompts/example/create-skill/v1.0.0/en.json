@@ -1,0 +1,55 @@
+{
+    "meta": {
+        "version": "1.0.0",
+        "prompt_type": "create-skill",
+        "language": "en",
+        "created_at": "2026-05-18T00:00:00Z",
+        "cost_estimated": 0.02,
+        "model_hints": [
+            "gpt-4o",
+            "claude-3-5-sonnet"
+        ],
+        "category": "example",
+        "tags": [
+            "skill",
+            "meta",
+            "agent"
+        ],
+        "output_schema": null
+    },
+    "blocks": [
+        {
+            "role": "system",
+            "content": "You are an expert in designing skills (capabilities) for AI agents. Your goal is to design a clear, reusable, and well-documented skill for the specified system. The skill must include: name, description, input parameters, execution steps, and success criteria."
+        },
+        {
+            "role": "user",
+            "content": "Design a new skill for the following purpose:\n\nSkill name: {{skill_name}}\nObjective description: {{objective}}\nTarget system: {{target_system}}\n\n{{#constraints}}Constraints:\n{{constraints}}\n\n{{/constraints}}{{#examples}}Usage examples:\n{{examples}}\n\n{{/examples}}Please generate the complete skill definition including parameters, steps, and validation criteria."
+        }
+    ],
+    "variables": {
+        "skill_name": {
+            "type": "string",
+            "required": true
+        },
+        "objective": {
+            "type": "string",
+            "required": true
+        },
+        "target_system": {
+            "type": "string",
+            "required": false,
+            "default": "generic AI agent"
+        },
+        "constraints": {
+            "type": "string",
+            "required": false,
+            "default": null
+        },
+        "examples": {
+            "type": "string",
+            "required": false,
+            "default": null
+        }
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "meta": {
+        "version": "1.0.0",
+        "prompt_type": "image",
+        "language": "en",
+        "created_at": "2026-05-20T00:00:00Z",
+        "cost_estimated": null,
+        "model_hints": [
+            "dall-e-3",
+            "stable-diffusion-xl"
+        ],
+        "category": "example",
+        "tags": [
+            "image",
+            "generation",
+            "product"
+        ],
+        "output_schema": null
+    },
+    "blocks": [
+        {
+            "content": "Professional product photo of {{product}}, {{style}} style, studio lighting, {{quality}}"
+        }
+    ],
+    "variables": {
+        "product": {
+            "type": "string",
+            "required": true
+        },
+        "style": {
+            "type": "string",
+            "required": false,
+            "default": "minimalist"
+        },
+        "quality": {
+            "type": "string",
+            "required": false,
+            "default": "8k, ultra detailed"
+        }
+    }
+}

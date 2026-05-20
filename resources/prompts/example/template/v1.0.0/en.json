@@ -1,0 +1,51 @@
+{
+    "meta": {
+        "version": "1.0.0",
+        "prompt_type": "template",
+        "language": "en",
+        "created_at": "2026-05-18T00:00:00Z",
+        "cost_estimated": 0.01,
+        "model_hints": [
+            "gpt-4o-mini",
+            "gemini-flash"
+        ],
+        "category": "example",
+        "tags": [
+            "template",
+            "generic",
+            "starter"
+        ],
+        "output_schema": null
+    },
+    "blocks": [
+        {
+            "role": "system",
+            "content": "{{#system_persona}}{{system_persona}}{{/system_persona}}{{^system_persona}}You are a helpful and precise assistant.{{/system_persona}}"
+        },
+        {
+            "role": "user",
+            "content": "{{instruction}}\n\n{{#input_data}}Input data:\n{{input_data}}\n\n{{/input_data}}{{#output_format}}Expected output format: {{output_format}}{{/output_format}}"
+        }
+    ],
+    "variables": {
+        "instruction": {
+            "type": "string",
+            "required": true
+        },
+        "input_data": {
+            "type": "string",
+            "required": false,
+            "default": null
+        },
+        "system_persona": {
+            "type": "string",
+            "required": false,
+            "default": null
+        },
+        "output_format": {
+            "type": "string",
+            "required": false,
+            "default": null
+        }
+    }
+}

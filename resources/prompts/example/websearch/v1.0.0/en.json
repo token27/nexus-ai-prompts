@@ -1,0 +1,51 @@
+{
+    "meta": {
+        "version": "1.0.0",
+        "prompt_type": "websearch",
+        "language": "en",
+        "created_at": "2026-05-18T00:00:00Z",
+        "cost_estimated": 0.005,
+        "model_hints": [
+            "gpt-4o-mini",
+            "gemini-flash"
+        ],
+        "category": "example",
+        "tags": [
+            "search",
+            "web",
+            "research"
+        ],
+        "output_schema": null
+    },
+    "blocks": [
+        {
+            "role": "system",
+            "content": "You are a web search specialist. Your task is to generate {{max_queries}} precise and varied search queries to gather comprehensive information on the given topic. Respond only with the queries, one per line."
+        },
+        {
+            "role": "user",
+            "content": "Generate web search queries for the following topic:\n\nTopic: {{topic}}\n\n{{#context}}Additional context: {{context}}\n\n{{/context}}Search language: {{search_language}}\nNumber of queries: {{max_queries}}"
+        }
+    ],
+    "variables": {
+        "topic": {
+            "type": "string",
+            "required": true
+        },
+        "max_queries": {
+            "type": "number",
+            "required": false,
+            "default": 5
+        },
+        "search_language": {
+            "type": "string",
+            "required": false,
+            "default": "English"
+        },
+        "context": {
+            "type": "string",
+            "required": false,
+            "default": null
+        }
+    }
+}

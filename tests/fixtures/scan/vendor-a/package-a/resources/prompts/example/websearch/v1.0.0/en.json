@@ -1,0 +1,31 @@
+{
+    "meta": {
+        "version": "1.0.0",
+        "prompt_type": "websearch",
+        "language": "en",
+        "created_at": "2026-05-19T00:00:00Z",
+        "cost_estimated": 0.001,
+        "model_hints": [],
+        "category": "scan-test",
+        "tags": [
+            "test"
+        ],
+        "output_schema": null
+    },
+    "blocks": [
+        {
+            "role": "system",
+            "content": "You are a search assistant."
+        },
+        {
+            "role": "user",
+            "content": "Search for: {{topic}}"
+        }
+    ],
+    "variables": {
+        "topic": {
+            "type": "string",
+            "required": true
+        }
+    }
+}
